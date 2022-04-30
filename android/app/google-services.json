@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335062732578",
+    "project_id": "gi-log-93ae7",
+    "storage_bucket": "gi-log-93ae7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335062732578:android:47bbcfed26f8888f329f7b",
+        "android_client_info": {
+          "package_name": "com.example.gi_log_notion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335062732578-0iumvbppjs8tl35e2mts2nb25btikh1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gi_log_notion",
+            "certificate_hash": "9e1c53b13ddb89bc41f2224389df26eec3685649"
+          }
+        },
+        {
+          "client_id": "335062732578-niuvfoprjjtpfjv4i3sfp5oe7sj45maj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7pp2N75uL4bA3cyW_YsezAP-JoXEttGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335062732578-niuvfoprjjtpfjv4i3sfp5oe7sj45maj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
