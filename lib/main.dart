@@ -7,6 +7,27 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:gilog_notion_ver1/main.dart';
 
+void main() => runApp(
+    MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.yellow,
+        ),
+        home:MyApp())
+);
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title : 'GI-log',
+      theme: ThemeData(
+        primarySwatch: Colors.yellow,
+      ),
+      home: MyCustomForm(),
+    );
+  }
+}
+
 class MyCustomForm extends StatefulWidget {
 
   @override
@@ -17,6 +38,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
 
   String _url = '';
+  String https = 'https://';
   //textfield data 받아오기
   TextEditingController _textStream = TextEditingController();
 
@@ -45,7 +67,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('gi-log'),
+        title: Text('GI-log'),
         centerTitle: true,
         elevation: 0.0,
         actions: <Widget>[
@@ -54,12 +76,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-          )
-
-          /*IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {},
-          ), */
+          ),
         ],
       ),
       drawer: Drawer(
@@ -69,7 +86,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
               leading: Icon(Icons.home),
               title:Text('기-록은 어떤 서비스인가요?'),
               onTap: () async {
-                const url= 'https://aspiring-fountain-cad.notion.site/1-b2c8c635f168410fbfb288529649cd0b';
+                const url= 'https://aspiring-fountain-cad.notion.site/8b54b902c4514ba5ab5844d186b6906f';
                 if (await canLaunch(url)) {
                   launch(url);
                 } else {
@@ -132,13 +149,14 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     ),
                   ),
                 ),
+
                 ElevatedButton(
                   onPressed: () async{
-                    if (await canLaunch(_url)) {
-                      launch(_url);
+                    if (await canLaunch(https+_url)) {
+                      launch(https+_url);
                     } else {
                       // ignore: avoid_print
-                      print("Can't launch $_url");
+                      print("Can't launch $https+_url");
                     }
                   }, child: const Text('나의 기록상자 열어보기',),),
               ],

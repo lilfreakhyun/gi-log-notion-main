@@ -4,6 +4,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:gilog_notion_ver1/main.dart';
 import 'package:gilog_notion_ver1/style.dart';
+import 'package:gilog_notion_ver1/labelOverrides.dart';
+
+import 'package:flutterfire_ui/i10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        FlutterFireUILocalizations.withDefaultOverrides(const LabelOverrides()),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        FlutterFireUILocalizations.delegate,
+      ],
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.yellow, backgroundColor: Colors.white),
@@ -52,8 +62,7 @@ class _MainPageState extends State<MainPage> {
               subtitleBuilder: (context, action) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: Text('처음 오신 기로기 환영해요 :) \nSign in with phone 을 눌러 로그인 해주세요!\n\n단계1. Sign in with phone 클릭\n단계2. Code를 +1 에서 +82로 바꾸어 줍니다'
-                      '\n단계3. 핸드폰 번호를 입력하고 NEXT 클릭\n단계4. 문자로 오는 코드를 입력\n단계5. 회원가입 성공!'),
+                  child: Text('만나서 반가워요 기로기! 3초 회원가입으로 \n소중한 일상을 함께 기-록해봐요!'),
                 );
               },
               providerConfigs: [
